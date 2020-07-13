@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 class Product < ApplicationRecord
-  acts_as_taggable_on :tags
+  include Taggable
 
-  monetize :price_amount
-
-  validates :name, :description, :price_amount, presence: true
+  validates :name, :description, :price, presence: true
 end

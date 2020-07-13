@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "required": ["data"],
+  "properties": {
+    "data": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "attributes",
+        "relationships"
+      ],
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string" },
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string" },
+            "description": { "type": "string" },
+            "price": { "type": "string" },
+            "created_at": { "type": "string" },
+            "updated_at": { "type": "string" }
+          }
+        },
+        "relationships": {
+          "type": "object",
+          "properties": {
+            "tags": {
+              "data": {
+                "type": "object",
+                "properties": {
+                  "id": { "type": "integer" },
+                  "title": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

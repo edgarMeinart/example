@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 module V1
-  # Namespace module
+  # Empty namespace module
 end

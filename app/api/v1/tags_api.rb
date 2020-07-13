@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-class V1::ProductsApi < Grape::API
+class V1::TagsApi < Grape::API
   helpers V1::Helpers
 
   helpers do
     def collection
-      Product.all
+      Tag.all
     end
   end
 
-  namespace :products do
+  namespace :tags do
     get do
       collection
     end
@@ -19,10 +19,7 @@ class V1::ProductsApi < Grape::API
         requires :id
         requires :type
         group :attributes, type: Hash do
-          requires :name
-          requires :description
-          requires :price
-          optional :tags
+          requires :title
         end
       end
     end
@@ -40,10 +37,7 @@ class V1::ProductsApi < Grape::API
           requires :id
           requires :type
           group :attributes, type: Hash do
-            optional :name
-            optional :description
-            optional :price
-            optional :tags
+            optional :title
           end
         end
       end
